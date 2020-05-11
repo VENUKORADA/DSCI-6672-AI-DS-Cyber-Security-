@@ -1,5 +1,5 @@
-
-Generating adverserial inputs for License plate recognition systems
+# Generating Adversarial inputs for LPR systems(DSCI-6672-AI-DS-Cyber-Security-Final Project)
+#Generating adverserial inputs for License plate recognition systems
 
 Final Project for  DSCI-6672-AI-DS-Cyber-Security- University of New Haven
 
@@ -7,63 +7,23 @@ Introduction:
 
 This Project consists of the License plate Recognition Models and then perturbing a individual integer as an input for adversarial attacks.
 
-The dataset
-
-===============================================================================================
-=                                ReId DATASET (license plates)                                =
-===============================================================================================
-===============================================================================================
-= Paper: Holistic Recognition of Low Quality License Plates by CNN using Track Annotated Data =
-= Authors: Jakub Spanhel, Jakub Sochor, Roman Juranek et al.                                  =
-= E-mail: {ispanhel,isochor,ijuranek,herout}@fit.vutbr.cz                                     =
-= © 2017, BUT FIT, Czech Republic                                                             =
-=                                                                                             =
-=                                                                                             =
-= LICENSE                                                                                     =
-= -------                                                                                     =
-= Except where otherwise noted, this work is licensed under                                   =
-= https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode                                 =
-= © 2017, ŠPAŇHEL, SOCHOR, JURÁNEK, HEROUT, MARŠÍK, ZEMČÍK. Some Rights Reserved.             =
-=                                                                                             =
-= TERMS OF USAGE                                                                              =
-= --------------                                                                              =
-= Dataset is available for academic research and non-commercial use only due to license       =
-= conditions. Please cite our original paper when used.                                       =
-= For commercial use please contact DPGM BUT FIT at {ispanhel, herout}@fit.vutbr.cz           =
-===============================================================================================
-
-
-CITATION
-========
-@INPROCEEDINGS{Spanhel2017holistic, 
-  author={{\v{S}}pa{\v{n}}hel, Jakub and Sochor, Jakub and Jur{\'a}nek, Roman and Herout, Adam and Mar{\v{s}}{\'\i}k, Luk{\'a}{\v{s}} and Zem{\v{c}}{\'\i}k, Pavel},
-  booktitle={2017 14th IEEE International Conference on Advanced Video and Signal Based Surveillance (AVSS)}, 
-  title={Holistic recognition of low quality license plates by CNN using track annotated data}, 
-  year={2017}, 
-  pages={1-6}, 
-  keywords={Character recognition;Image recognition;Image segmentation;Licenses;Neural networks;Optical character recognition software;Training}, 
-  organization={IEEE},
-  doi={10.1109/AVSS.2017.8078501}, 
-  ISBN={978-1-5386-2939-0}, 
-  month={Aug},
-  year={2017}
-}
-
-****************
-* DATASET INFO *
-****************
-
-Ground truth labels, train/test split
-============
-File: trainVal.csv
-------------
-track_id - ID of specific track based on tracker
-image_path - path to image in archive structure
-lp - ground truth text for license plate
-train - Train/test split. 0 - test, 1 - train
+The dataset is ReID and is explained detailly below.
 
 The image processing techniques have been adapted from several scholars of github .
 
+
+
+I have tried to perturb the whole license plate in as a single input but due to some technical limitations as of now for the strides . Unable to convert strides of 3 or 1 to 2.
+
+So instead we go with the process of perturbing the sgregated images.
+Segregated images are individual images that are segregated form license plates . They are cleaned filtered and then segregated. This model is adverserially attacked if we can paste the perturbed images shown in the ipynb onto a valid license plate. And we should test the plate with the same model not any other model. 
+
+As we have created the perturbation based on the model this wpould be considered white box attack .
+
+
+# Next steps
+
+The next steps would be to make this a black box attack if possible and do it for the complete license plate as input instead of the segregated images of each.
 
          
 
