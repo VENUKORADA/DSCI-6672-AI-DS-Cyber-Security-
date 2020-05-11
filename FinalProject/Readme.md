@@ -21,6 +21,117 @@ Segregated images are individual images that are segregated form license plates 
 As we have created the perturbation based on the model this wpould be considered white box attack .
 
 
+# File desc:
+
+LPR.ipynb has the steps for building a model training  and saving the models  to h5 files. It also has the perturbation concepts and adverserially created images.
+
+lpr_image_processing.py has below functions that are adapted for several github scholars.
+
+def image_extraction(csv_files, channel):
+    """
+    the images to be extxracted are grayscale
+    extract images from images/grayscale
+    """
+
+def homomorphic_filter(csv_files):
+    """
+    to improve the area of observation in the license plate.
+    this function removes a lot of noise and unnecessary parts of the
+    license plate
+
+
+def MSER():
+    """
+    Maximally Stable External Region extractor
+    character segmentation algorithm
+    only draws contours around the alphabets
+    """
+
+
+def get_component(data, i, j):
+    """
+    returns a single component which is in the same component as i,j in the pixel
+    #set data[i][j] = 0 so that it will not go to an infinite loop
+    image will be sent as reference and BE AWARE,
+    once you call this image will be BLACK every where.
+    so if you want to store the original image some where
+    make sure to copy in another variable
+    """
+
+
+def get_segments(data):
+    """
+    sends an array of segmented images, provided the data has only 0->black and 255->white.
+    image will be sent as reference and BE AWARE,
+    once you call this image will be BLACK every where.
+    so if you want to store the original image some where
+    make sure to copy in another variable
+    """
+
+
+def print_segments(segments):
+    """
+    use the segments and re-create the images using the segments
+    """
+
+def convert_image_to_numpy(individual):
+    """
+    convert image to array
+    """
+
+def save_filtered_data(copy_filtered_data, labels):
+    """
+    save the filtered homomorphic images in images/filtered
+    """
+
+def filtered_image_extraction(files):
+    """
+    extract images from images/filtered
+    """
+
+def noise_removal(copy_X, index):
+    """
+    remove the remaining noisy parts from homomorphed images
+    """
+
+
+def flip_and_rotate():
+    """
+    flip and rotate the images
+    """
+
+
+def final_extraction(folder_list):
+    """
+    extract images from all folder from training all characters
+    AVAILABLE CHARACTERS - 0 1 2 3 4 5 6 7 8 9
+                           A B C D E F I J L M N
+                           P R S T V W X Z
+    """
+
+def image_padding_by_resize(data, pad_x, pad_y):
+    """
+    padding by resizing
+    performs very poor because image resolution is poor
+    can be used if the data is highly pixelated
+    """
+
+def preparing_data():
+    """
+    image extraction and processing
+    1. Homomorphic filter is applied on all images & saved in images/filtered
+    2. Segmenting the homomorphed images and extracting each
+       character from the images
+    3. Saving these segmented image to images/segmented
+       The character has to be manually re-arranged into folders
+       Each folder name is the character shown in the image
+    """
+
+
+
+
+
+
 # Next steps
 
 The next steps would be to make this a black box attack if possible and do it for the complete license plate as input instead of the segregated images of each.
